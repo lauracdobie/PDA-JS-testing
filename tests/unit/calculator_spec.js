@@ -31,17 +31,28 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 15);
   })
 
-  it('divide 21 by 7 and get 3', function(){
+  it('can divide 21 by 7 and get 3', function(){
     calculator.previousTotal = 21;
     calculator.divide(7)
     assert.strictEqual(calculator.runningTotal, 3);
   })
 
-  it('should concatenate multiple number button clicks', function(){
+  it('can concatenate multiple number button clicks', function(){
     calculator.runningTotal = 0;
     calculator.numberClick(2);
     calculator.numberClick(7);
     assert.strictEqual(calculator.runningTotal, 27);
+  })
+
+  it('can chain multiple operations together', function(){
+    calculator.runningTotal = 0;
+    calculator.numberClick(2);
+    calculator.operatorClick('+')
+    calculator.numberClick(7);
+    calculator.operatorClick('+')
+    calculator.numberClick(1);
+    calculator.operatorClick('=')
+    assert.strictEqual(calculator.runningTotal, 10);
   })
 
 
