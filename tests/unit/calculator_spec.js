@@ -19,4 +19,10 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 5);
   })
 
+  it('can add 1 to 4 and get 5', function(){
+    calculator.previousTotal = 7;
+    calculator.subtract(4)
+    assert.strictEqual(calculator.runningTotal, 3);
+  })
+
 });
