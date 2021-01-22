@@ -67,4 +67,10 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 6);
   })
 
+  it('displays error if you try to divide a number by 0', function(){
+    calculator.previousTotal = 5;
+    calculator.divide(0)
+    assert.strictEqual(calculator.runningTotal, "error");
+  })
+
 });
